@@ -1,18 +1,58 @@
 \documentclass[a4paper,10pt]{article}
+
+\pagestyle{myheadings}
+\markright{Dieter Castel\hfill Exam UAI 21-08-2020\hfill}
+
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
 \usepackage[margin=0.8cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{graphicx}
-\usepackage{pbox}
+% Optional so far
+\usepackage{amsopn}
+\usepackage{amsmath}
+\usepackage{amssymb} %for \blacksquare
+\usepackage{dsfont} %for \mathds{I}
+\usepackage{scalerel} %for \scaleto
 
 
+%ESSENTIAL:
 \newcommand{\negspace}{\!\!\!}
 \newcommand{\idp}{\perp \negspace \perp}
 \newcommand{\nidp}{\not \idp}
 \newcommand{\dep}{\top \negspace \top}
 \newcommand{\ndep}{\not \dep}
 \newcommand{\ra}{\rightarrow}
+%--------------------------------
+
+%OPTIONAL:
+\newcommand{\ty}{\tilde{y}}
+\newcommand{\qed}{$\blacksquare$}
+%requires amsmath/amsopn
+%\newcommand{\prepsize}{\DeclareMathSizes{10}{10}{9}{9}}
+%\newcommand{\prepsize}{\DeclareMathSizes{10}{10}{10\defaultscriptratio}{10}}
+%\newcommand{\restoresize}{\DeclareMathSizes{10}{10}{\defaultscriptratio}{\defaultscriptscriptratio}}
+%\prepsize
+%solution with scalerel instead.
+\newcommand{\high}[2]{\operatorname*{#1}\limits^{\operatorname*{|}\limits^{\scaleto{#2}{5pt}}}}
+\newcommand{\ahigh}[2]{\operatorname*{#1}\limits^{\operatorname*{\uparrow}\limits^{\scaleto{#2}{5pt}}}}
+\newcommand{\low}[2]{\operatorname*{#1}\limits_{\operatorname*{|}\limits_{\scaleto{#2}{5pt}}}}
+\newcommand{\alow}[2]{\operatorname*{#1}\limits_{\operatorname*{\downarrow}\limits_{\scaleto{#2}{5pt}}}}
+\newcommand{\g}{\gamma}
+%\operatorname* is required for the limits_ command to work.
+%\newcommand{\low}[2]{\operatorname*{#1}\limits_{\operatorname*{|}\limits_{\mbox{\large #2}}}}
+
+% file specific.
+\newcommand{\mtb}{\mu_{f_1 \rightarrow b}(b)}
+\newcommand{\mtc}{\mu_{f_2 \rightarrow c}(c)}
+\newcommand{\mfb}{\mu_{b \rightarrow f_3}(b)}
+\newcommand{\mfc}{\mu_{c \rightarrow f_3}(c)}
+\newcommand{\mtd}{\mu_{f_3 \rightarrow d}(d)}
+\newcommand{\en}{\wedge}
+\newcommand{\of}{\vee}
+%-----OPTIONAL-----------END-----------
 
 %opening
 \title{Uncertainty in Artificial Intelligence - Cheat sheet}
@@ -151,6 +191,8 @@ $L_G$ set of independencies in graph.
 $$\begin{array}{l|c}
     \textrm{ Formula} & \textrm{Comment}  \\ 
     \\
+    \alow{h_1}{v_1} \ra \alow{h_2}{v_2} \cdots \ra \alow{h_T}{v_T} & \textrm{First order markov chain example} \\
+    \\
     p(v_{1:t}, h_{1:t}) = p(h_1) * \Pi^{t}_{i=2} p(v_t|h_t) p(h_t| h_{t-1}) & \textrm{JPD for an HMM}
     \\
     p(v_t | h_t) (= p(v_1 | h_1) \iff \textrm{stationary HMM})   & \textrm{emission matrix} \\
@@ -262,6 +304,7 @@ $$ \langle f(x) \rangle_{p(x)} = \sum_{x^l \in S_q} f(x^l) w(x^l) \textrm{ where
 \section{soft and unreliable evidence}
 %TODO?
 
+$$ \ty $$
 
 
 
@@ -342,7 +385,7 @@ Some images taken from the Bayesian Reasoning and Machine Learning book. Found o
 
 
 
-
+%Test $\tf@size$ %\mtf@size \sf@size \ssf@size $. 
 
 
 
