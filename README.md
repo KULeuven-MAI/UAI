@@ -1,6 +1,9 @@
 # UAI
 Uncertainty In Artificial Intelligence.
 
+# Cheat sheet
+
+The [pdf of the cheat sheet can be found here](https://github.com/KULeuven-MAI/UAI/raw/master/cheatsheet.pdf) and obviously comes without any warranty of correctness (not for lack of trying to converge towards it though.) I was inspired by the cheat sheet by P. Carbonelle (see reference in pdf).
 
 # Books
 
